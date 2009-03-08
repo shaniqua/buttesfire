@@ -1,0 +1,7 @@
+.message a.preview span {
+  display: inline;
+}
+
+.message a.preview img {
+  display: none;
+}

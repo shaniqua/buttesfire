@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	function scrollToBottom() {
+		document.body.scrollTop = document.body.offsetHeight;
+	}
+
+  function loadInlineImage(image) {
+    var maxWidth = arguments.callee.maxWidth || 300;
+    image.style.width = 'auto';
+    image.style.visibility = 'hidden';
+    if (image.width > maxWidth) image.style.width = maxWidth + 'px';
+    image.style.visibility = 'visible';
+    setTimeout(scrollToBottom, 50);
+  }
+</script>
