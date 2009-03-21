@@ -209,6 +209,15 @@
 			<xsl:when test="$extension = '.bmp' or $extension = '.BMP'">
 				<a href="{@href}" title="{@href}" class="preview"><img src="{@href}" width="0" alt="Loading Image..." onload="loadInlineImage(this)" /><span><xsl:value-of select="@href" /></span></a>
 			</xsl:when>
+            <xsl:when test="$extension = '.mp3' or $extension = '.MP3'">
+                <a href="{@href}" title="{@href}"><xsl:value-of select="@href" /></a><br />
+                <object width="250" height="20" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+                    <param name="src" value="{@href}" />
+                    <param name="autoplay" value="false" />
+                    <param name="controller" value="true" />
+                </object>
+            </xsl:when>
+
 			<xsl:otherwise>
 				<xsl:copy-of select="current()"/>
 			</xsl:otherwise>
