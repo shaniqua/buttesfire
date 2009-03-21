@@ -191,7 +191,7 @@
 		<xsl:variable name="extensionLong" select="substring(@href,string-length(@href) - 4, 5)" />
 
 		<xsl:choose>
-			<xsl:when test="$extension = '.jpg' or $extension = '.JPG' or $extensionLong = '.jpeg' or $extensionLong = '.JPEG'">
+			<xsl:when test="$extension = '.jpg' or $extension = '.JPG' or $extensionLong = '.jpeg' or $extensionLong = '.JPEG' or $extensionLong = 'g?v=0'">
 				<a href="{@href}" title="{@href}" class="preview"><img src="{@href}" width="0" alt="Loading Image..." onload="loadInlineImage(this)" /><span><xsl:value-of select="@href" /></span></a>
 			</xsl:when>
 			<xsl:when test="$extension = '.gif' or $extension = '.GIF'">
