@@ -19,7 +19,7 @@
         audio = new Audio(url);
         audio.addEventListener('ended', function () {
           image.src = 'images/media-playback-start.png';
-          image.onclick = function () { playAudio(image, this) };
+          image.onclick = function () { playAudio(image, audio) };
         });
     }
     audio.play();
