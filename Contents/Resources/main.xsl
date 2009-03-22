@@ -191,7 +191,7 @@
 		<xsl:variable name="extensionLong" select="substring(@href,string-length(@href) - 4, 5)" />
 
 		<xsl:choose>
-			<xsl:when test="$extension = '.jpg' or $extension = '.JPG' or $extensionLong = '.jpeg' or $extensionLong = '.JPEG'">
+			<xsl:when test="$extension = '.jpg' or $extension = '.JPG' or $extensionLong = '.jpeg' or $extensionLong = '.JPEG' or $extensionLong = 'g?v=0'">
 				<a href="{@href}" title="{@href}" class="preview"><img src="{@href}" width="0" alt="Loading Image..." onload="loadInlineImage(this)" /><span><xsl:value-of select="@href" /></span></a>
 			</xsl:when>
 			<xsl:when test="$extension = '.gif' or $extension = '.GIF'">
@@ -210,11 +210,7 @@
 				<a href="{@href}" title="{@href}" class="preview"><img src="{@href}" width="0" alt="Loading Image..." onload="loadInlineImage(this)" /><span><xsl:value-of select="@href" /></span></a>
 			</xsl:when>
       <xsl:when test="$extension = '.mp3' or $extension = '.MP3'">
-        <object width="17" height="16" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" class="audio">
-          <param name="src" value="{@href}" />
-          <param name="autoplay" value="false" />
-          <param name="controller" value="true" />
-        </object>
+        <img src="images/media-playback-start.png" onclick="playAudio(this)" class="audio" />
         <a href="{@href}" style="margin-left:0.5em"><xsl:value-of select="@href" /></a>
       </xsl:when>
 			<xsl:otherwise>

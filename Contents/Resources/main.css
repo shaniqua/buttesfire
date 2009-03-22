@@ -333,3 +333,9 @@ a.background_toggler {
   background-color: #ccc;
   color: #222;
 }
+
+img.audio {
+  cursor: pointer;
+  float: left;
+  padding: 0 4px 5px 4px;
+}

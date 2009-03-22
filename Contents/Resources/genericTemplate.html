@@ -11,4 +11,22 @@
     image.style.visibility = 'visible';
     setTimeout(scrollToBottom, 50);
   }
+
+  function playAudio(image, audio) {
+    image.src = 'images/media-playback-pause.png'; 
+    if (! audio) {
+        var url = image.nextSibling.href;
+        audio = new Audio(url);
+        audio.addEventListener('ended', function () {
+          image.src = 'images/media-playback-start.png';
+          image.onclick = function () { playAudio(image, this) };
+        });
+    }
+    audio.play();
+    image.onclick = function() {
+      audio.pause();
+      this.src = 'images/media-playback-start.png';
+      this.onclick = function () { playAudio(this, audio) };
+    };
+  }
 </script>
