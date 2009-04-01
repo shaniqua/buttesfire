@@ -211,7 +211,11 @@
 			</xsl:when>
       <xsl:when test="$extension = '.mp3' or $extension = '.MP3'">
         <img src="images/media-playback-start.png" onclick="playAudio(this)" class="audio" />
-        <a href="{@href}" style="margin-left:0.5em"><xsl:value-of select="@href" /></a>
+        <a href="{@href}"><xsl:value-of select="@href" /></a>
+      </xsl:when>
+      <xsl:when test="$extension = '.wav' or $extension = '.WAV'">
+        <img src="images/media-playback-start.png" onclick="playAudio(this)" class="audio" />
+        <a href="{@href}"><xsl:value-of select="@href" /></a>
       </xsl:when>
 			<xsl:otherwise>
 				<xsl:copy-of select="current()"/>
